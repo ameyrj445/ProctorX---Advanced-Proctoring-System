@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
-/* Custom Global Styles */
+/* Cross-browser Reset and Normalization */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Scrollbar with fallbacks for older browsers */
 * {
+    /* Scrollbar styling - newer browsers only */
+    /* stylelint-disable-next-line property-no-unknown */
     scrollbar-color: #4f46e5 #1e293b;
+    /* stylelint-disable-next-line property-no-unknown */
     scrollbar-width: thin;
 }
 
@@ -24,22 +55,17 @@
     background: #6366f1;
 }
 
+/* Video Element Responsive Sizing */
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 /* Smooth animations */
-body {
-    overflow: hidden;
-}
-
-/* Gradient background animation */
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-/* Fade in animation for components */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -51,6 +77,75 @@ body {
     }
 }
 
-body, #root {
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body,
+#root {
     animation: fadeIn 0.5s ease-out;
+}
+
+nav {
+    animation: slideInDown 0.4s ease-out;
+}
+
+/* Responsive Text for Small Devices */
+@media (max-width: 640px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Fix for Mobile Safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Prevent zoom on input focus for iOS */
+input,
+select,
+textarea {
+    font-size: 16px;
+}
+
+/* Ensure proper rendering on all browsers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fix for backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+    @supports not (-webkit-backdrop-filter: blur(10px)) {
+        .backdrop-blur-sm {
+            background-color: rgba(15, 23, 42, 0.9);
+        }
+    }
+}
+
+/* Ensure flexbox works correctly across browsers */
+.flex {
+    display: flex;
+}
+
+/* CSS Variables for theme */
+:root {
+    --color-primary: #4f46e5;
+    --color-secondary: #06b6d4;
+    --color-danger: #ef4444;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
 }
