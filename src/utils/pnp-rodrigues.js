@@ -30,6 +30,7 @@ export function solvePnP(objectPoints, imagePoints, cameraMatrix) {
  * @param {Array} rvec - Rotation vector [rx, ry, rz]
  * @returns {Array} 3x3 rotation matrix in row-major order
  */
+
 export function rodrigues(rvec) {
     const [rx, ry, rz] = rvec;
     const theta = Math.sqrt(rx * rx + ry * ry + rz * rz);
