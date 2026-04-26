@@ -218,5 +218,3 @@ For issues or questions:
 3. Check browser console for error messages
 
 ---
-
-
