@@ -64,7 +64,7 @@ exam-vision-client-main/
 
 3. **Install dependencies**:
    ```bash
-   npm install
+   npm install 
    ```
 
 ### Running the Application
