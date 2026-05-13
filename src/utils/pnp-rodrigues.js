@@ -272,4 +272,3 @@ function solve6x6(A, b) {
     
     return x;
 }
-
