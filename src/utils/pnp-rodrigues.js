@@ -96,9 +96,14 @@ function initializePose(objPts, imgPts, fx, fy, cx, cy, n) {
     
     const ry = Math.atan2(sumY, tz) * 0.5;
     const rx = Math.atan2(-sumX, tz) * 0.5;
-    
+
+    // Limit upward pitch to 40 degrees (in case initial estimate looks too far up)
+    const maxUpDeg = 40;
+    const maxUpRad = maxUpDeg * Math.PI / 180;
+    const rxClamped = rx < -maxUpRad ? -maxUpRad : rx;
+
     return {
-        rvec: [rx, ry, 0],
+        rvec: [rxClamped, ry, 0],
         tvec: [(cx2d - cx) * tz / fx, (cy2d - cy) * tz / fy, tz]
     };
 }
@@ -108,6 +113,8 @@ function refinePose(pose, objPts, imgPts, fx, fy, cx, cy, n, maxIter = 30) {
     let {rvec, tvec} = pose;
     let lambda = 0.001;
     let prevError = Infinity;
+    const maxUpDeg = 40;
+    const maxUpRad = maxUpDeg * Math.PI / 180;
     
     for (let iter = 0; iter < maxIter; iter++) {
         const R = rodrigues(rvec);
@@ -151,6 +158,9 @@ function refinePose(pose, objPts, imgPts, fx, fy, cx, cy, n, maxIter = 30) {
         // Update parameters
         rvec = [rvec[0] - delta[0], rvec[1] - delta[1], rvec[2] - delta[2]];
         tvec = [tvec[0] - delta[3], tvec[1] - delta[4], tvec[2] - delta[5]];
+
+        // Clamp upward rotation (pitch) to avoid extreme upward head tilt
+        if (rvec[0] < -maxUpRad) rvec[0] = -maxUpRad;
         
         // Adjust damping
         if (error < prevError) {
