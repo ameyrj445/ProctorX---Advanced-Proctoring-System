@@ -270,6 +270,7 @@ function solve6x6(A, b) {
         }
     }
     
+    
     // Back substitution
     const x = new Array(n);
     for (let i = n - 1; i >= 0; i--) {
