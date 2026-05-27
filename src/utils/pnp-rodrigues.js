@@ -233,7 +233,6 @@ function computeJacobian(rvec, tvec, R, objPts, imgPts, fx, fy, cx, cy, n) {
         J.push(du_drx, du_dry, du_drz, du_dXc, du_dYc, du_dZc);
         J.push(dv_drx, dv_dry, dv_drz, dv_dXc, dv_dYc, dv_dZc);
     }
-
     return { residuals, J };
 }
 
@@ -249,7 +248,6 @@ function solve6x6(A, b) {
         }
     }
     const B = [...b];
-
 
     // Forward elimination
     for (let i = 0; i < n; i++) {
