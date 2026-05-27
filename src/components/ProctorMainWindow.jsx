@@ -138,6 +138,7 @@ export default function ProctorMainWindow() {
                     </div>
                 </div>
 
+
                 {/* Right Panel - Capture Data */}
                 <div className="flex flex-col items-center justify-center flex-1
                 bg-gradient-to-br from-slate-800/60 to-slate-900/60
