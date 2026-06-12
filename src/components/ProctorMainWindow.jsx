@@ -25,7 +25,7 @@ export default function ProctorMainWindow() {
         else
             setInference("Focused");
     }
-
+                         
     useEffect(() => {
         const init = async () => {
             // 1. Load wasm files
@@ -94,7 +94,7 @@ export default function ProctorMainWindow() {
         }
         requestAnimationFrame(detectFace);
     };
-
+                                          
     return (
         <div className="w-full h-full p-2 sm:p-3 md:p-4 lg:p-6 overflow-auto">
             <div className={`flex flex-col lg:flex-row justify-between items-stretch
@@ -137,7 +137,7 @@ export default function ProctorMainWindow() {
                         </div>
                     </div>
                 </div>
-
+                                     
                 {/* Right Panel - Capture Data */}
                 <div className="flex flex-col items-center justify-center flex-1
                 bg-gradient-to-br from-slate-800/60 to-slate-900/60
@@ -163,4 +163,4 @@ export default function ProctorMainWindow() {
             </div>
         </div>
     );
-}
+}                                  
