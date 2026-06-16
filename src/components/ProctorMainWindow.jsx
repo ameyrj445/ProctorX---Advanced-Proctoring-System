@@ -3,7 +3,7 @@ import { FilesetResolver, FaceLandmarker } from "@mediapipe/tasks-vision";
 import { computeHeadPose } from "../utils/headPoseUtils.js";
 
 export default function ProctorMainWindow() {
-
+                                                     
     const FACE_NOT_FOUND_MESSAGE = "Face Not Found"
 
     const KEY_LANDMARK_INDICES = [1, 9, 57, 130, 287, 359];
@@ -17,6 +17,7 @@ export default function ProctorMainWindow() {
     });
     const [inference, setInference] = useState("");
 
+
     function updateInference(yaw) {
         if (yaw > 30)
             setInference("Looking Right");
@@ -25,7 +26,8 @@ export default function ProctorMainWindow() {
         else
             setInference("Focused");
     }
-                         
+      
+    
     useEffect(() => {
         const init = async () => {
             // 1. Load wasm files
