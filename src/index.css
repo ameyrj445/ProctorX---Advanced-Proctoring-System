@@ -8,7 +8,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+                          
 html {
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
@@ -140,7 +140,7 @@ img {
 .flex {
     display: flex;
 }
-
+                                   
 /* CSS Variables for theme */
 :root {
     --color-primary: #4f46e5;
@@ -149,3 +149,4 @@ img {
     --color-success: #10b981;
     --color-warning: #f59e0b;
 }
+                                                

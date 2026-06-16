@@ -75,3 +75,4 @@ function rotationMatrixToEulerAngles(R) {
         roll: (roll * 180) / Math.PI,    // Tilt (ear to shoulder)
     };
 }
+                               
