@@ -43,10 +43,8 @@ export async function computeHeadPose(faceCoordinationInImageArray, imageWidth =
         pixelCoords,
         cameraMatrix
     );
-
     // Convert rotation vector to rotation matrix
     const R = rodrigues(rvec);
-
     // Euler angles (degrees)
     const euler = rotationMatrixToEulerAngles(R);
 
@@ -75,4 +73,3 @@ function rotationMatrixToEulerAngles(R) {
         roll: (roll * 180) / Math.PI,    // Tilt (ear to shoulder)
     };
 }
-                               
