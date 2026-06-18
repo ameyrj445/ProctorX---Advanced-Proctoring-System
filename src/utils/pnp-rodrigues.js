@@ -1,5 +1,4 @@
 // Pure JavaScript implementation of cv.solvePnP and cv.Rodrigues
-
 /**
  * Solves PnP (Perspective-n-Point) problem using Levenberg-Marquardt optimization
  * @param {Array} objectPoints - 3D points in world coordinate [x, y, z, ...]
@@ -174,6 +173,7 @@ function refinePose(pose, objPts, imgPts, fx, fy, cx, cy, n, maxIter = 30) {
     return { rvec, tvec };
 }
 
+
 // Helper: Compute Jacobian and residuals
 function computeJacobian(rvec, tvec, R, objPts, imgPts, fx, fy, cx, cy, n) {
     const residuals = [];
@@ -268,7 +268,6 @@ function solve6x6(A, b) {
             B[k] -= c * B[i];
         }
     }
-
 
     // Back substitution
     const x = new Array(n);
