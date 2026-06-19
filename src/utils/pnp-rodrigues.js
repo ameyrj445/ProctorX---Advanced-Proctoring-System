@@ -10,10 +10,10 @@ export function solvePnP(objectPoints, imagePoints, cameraMatrix) {
     const numPoints = objectPoints.length / 3;
 
     // Extract camera parameters
-    const fx = cameraMatrix[0];
-    const fy = cameraMatrix[4];
-    const cx = cameraMatrix[2];
-    const cy = cameraMatrix[5];
+    const fx = cameraMatrix[0];                 
+    const fy = cameraMatrix[4];                   
+    const cx = cameraMatrix[2];                  
+    const cy = cameraMatrix[5];                                            
 
     // Initial guess using DLT (Direct Linear Transform)
     let pose = initializePose(objectPoints, imagePoints, fx, fy, cx, cy, numPoints);
