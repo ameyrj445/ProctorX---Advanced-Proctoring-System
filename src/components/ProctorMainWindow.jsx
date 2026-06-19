@@ -62,6 +62,7 @@ export default function ProctorMainWindow() {
         init();
     }, []);
 
+    
     // 3. Frame loop for detection
     const detectFace = async (timestamp) => {
         if (
@@ -94,7 +95,8 @@ export default function ProctorMainWindow() {
         }
         requestAnimationFrame(detectFace);
     };
-                                          
+          
+    
     return (
         <div className="w-full h-full p-2 sm:p-3 md:p-4 lg:p-6 overflow-auto">
             <div className={`flex flex-col lg:flex-row justify-between items-stretch
