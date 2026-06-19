@@ -17,7 +17,6 @@ export default function ProctorMainWindow() {
     });
     const [inference, setInference] = useState("");
 
-
     function updateInference(yaw) {
         if (yaw > 30)
             setInference("Looking Right");
@@ -26,7 +25,6 @@ export default function ProctorMainWindow() {
         else
             setInference("Focused");
     }
-      
     
     useEffect(() => {
         const init = async () => {

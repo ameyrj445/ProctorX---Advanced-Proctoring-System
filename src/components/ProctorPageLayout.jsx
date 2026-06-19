@@ -13,4 +13,5 @@ export default function ProctorPageLayout() {
             </div>
         </div>
     )
+    
 }                                                                                
