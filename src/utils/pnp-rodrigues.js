@@ -9,6 +9,7 @@
 export function solvePnP(objectPoints, imagePoints, cameraMatrix) {
     const numPoints = objectPoints.length / 3;
 
+    
     // Extract camera parameters
     const fx = cameraMatrix[0];                 
     const fy = cameraMatrix[4];                   
