@@ -44,6 +44,7 @@ export async function computeHeadPose(faceCoordinationInImageArray, imageWidth =
         cameraMatrix
     );
     
+    
     // Convert rotation vector to rotation matrix
     const R = rodrigues(rvec);
 
