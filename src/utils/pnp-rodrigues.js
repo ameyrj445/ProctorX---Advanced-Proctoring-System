@@ -173,7 +173,6 @@ function refinePose(pose, objPts, imgPts, fx, fy, cx, cy, n, maxIter = 30) {
     return { rvec, tvec };
 }
 
-
 // Helper: Compute Jacobian and residuals
 function computeJacobian(rvec, tvec, R, objPts, imgPts, fx, fy, cx, cy, n) {
     const residuals = [];
@@ -235,6 +234,7 @@ function computeJacobian(rvec, tvec, R, objPts, imgPts, fx, fy, cx, cy, n) {
     }
     return { residuals, J };
 }
+
 
 // Helper: Solve 6x6 linear system using Gaussian elimination
 function solve6x6(A, b) {
