@@ -235,7 +235,6 @@ function computeJacobian(rvec, tvec, R, objPts, imgPts, fx, fy, cx, cy, n) {
     return { residuals, J };
 }
 
-
 // Helper: Solve 6x6 linear system using Gaussian elimination
 function solve6x6(A, b) {
     const n = 6;
