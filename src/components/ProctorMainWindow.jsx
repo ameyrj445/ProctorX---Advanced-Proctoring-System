@@ -61,7 +61,6 @@ export default function ProctorMainWindow() {
 
         init();
     }, []);
-
     
     // 3. Frame loop for detection
     const detectFace = async (timestamp) => {

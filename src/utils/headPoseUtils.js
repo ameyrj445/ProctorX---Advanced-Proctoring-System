@@ -36,7 +36,7 @@ export async function computeHeadPose(faceCoordinationInImageArray, imageWidth =
         0, focalLength, imageHeight / 2,
         0, 0, 1,
     ];
-
+                                                                  
     // Solve PnP
     const {rvec, tvec} = solvePnP(
         facialCoordinationInRealWorld,
