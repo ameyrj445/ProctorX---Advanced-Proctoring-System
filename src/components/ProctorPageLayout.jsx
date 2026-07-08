@@ -10,7 +10,7 @@ export default function ProctorPageLayout() {
             <Navbar />
             <div className="flex-1 w-full h-full overflow-hidden">
                 <ProctorMainWindow />
-            </div>
+            </div>                                   
         </div>
     )
 }               
