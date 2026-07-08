@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Navbar() {
-    return (
+    return (                  
         <nav className='flex items-center justify-between
         w-full
         bg-gradient-to-r from-blue-900 via-purple-900 to-blue-800
