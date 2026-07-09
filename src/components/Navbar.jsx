@@ -15,7 +15,7 @@ export default function Navbar() {
                 <h1 className='text-lg sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent truncate'>
                     ProcterX
                 </h1>
-            </div>
+            </div>                                     
             <div className='flex gap-4 sm:gap-8 text-gray-200 text-xs sm:text-sm md:text-base'>
                 <a href='#' className='hover:text-cyan-400 transition-colors duration-300 font-medium whitespace-nowrap'>Home</a>
                 <a href='#' className='hover:text-cyan-400 transition-colors duration-300 font-medium whitespace-nowrap'>Demo</a>
