@@ -33,4 +33,3 @@ export default defineConfig({
     include: ['react', 'react-dom', '@mediapipe/tasks-vision'],
   },
 })
-
