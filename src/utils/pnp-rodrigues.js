@@ -245,7 +245,7 @@ function solve6x6(A, b) {
         for (let j = 0; j < n; j++) {
             M[i][j] = A[i * n + j];                        
         }
-    }                                          
+    }                                                      
     const B = [...b];
 
     // Forward elimination
