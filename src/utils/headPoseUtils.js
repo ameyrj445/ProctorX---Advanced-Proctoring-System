@@ -47,6 +47,7 @@ export async function computeHeadPose(faceCoordinationInImageArray, imageWidth =
     // Convert rotation vector to rotation matrix
     const R = rodrigues(rvec);
     
+    
     // Euler angles (degrees)
     const euler = rotationMatrixToEulerAngles(R);
     return {
