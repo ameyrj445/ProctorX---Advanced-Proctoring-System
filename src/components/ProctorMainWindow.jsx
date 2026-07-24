@@ -61,7 +61,7 @@ export default function ProctorMainWindow() {
 
         init();
     }, []);
-                                         
+                                                       
     // 3. Frame loop for detection
     const detectFace = async (timestamp) => {
         if (
@@ -73,7 +73,7 @@ export default function ProctorMainWindow() {
             const results = faceLandmarkerRef.current.detectForVideo(
                 videoRef.current,
                 timestamp
-            );                          
+            );                                                              
 
             if (results.faceLandmarks[0]) {
                 let key_landmarks = KEY_LANDMARK_INDICES.map(key_index => results.faceLandmarks[0][key_index]);
